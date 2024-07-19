@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+@media (prefers-color-scheme: dark) {
+    body { background-color: #202020; color: white; }
+    h1{color:white;}
+    .maindiv{background-color:#111}
+    .topdiv{background-color: #3d3d3d;}
+    .bar{background-color:#bdbdbd}
+    .card{  background-color:#3d3d3d;}
+  }
+  
+  @media (prefers-color-scheme: light) {
+    body { background-color: #ddd; color: black; }
+    h1{color:black;}
+    .topdiv{background-color:#bdbdbd}
+    .bar{background-color:#3d3d3d}
+    .card{  background-color:#bdbdbd;}
+}
+
+
+
+
+body {
+  margin: 0; /* Removes default margin */
+  padding-top: 81.8667px; /* Ensures content is not hidden behind the fixed div */
+}
+
+.images{
+  display:flex;
+  justify-content:center;
+  flex-wrap: wrap;
+}
+.screenshot{
+  height:300px;
+  width:500px;
+  margin:10px;
+  border-radius:10px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #3d3d3d;
+  color: white;
+  padding: 10px 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  padding:5px;
+}
+
+.footer.show {
+  transform: translateY(0);
+}
+
+h1{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.topclick{
+  cursor:pointer;
+}
+.container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+}
+
+iframe {
+  border: 0;
+}
+
+h2,h3,h4,h5,a{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: inherit; /* This makes the link color the same as the parent element's color */
+    text-decoration: none; /* This removes the underline from links */
+}
+a:hover, a:focus {
+  color: inherit; /* Keep the color the same on hover/focus */
+  text-decoration: none; /* Ensure no underline on hover/focus */
+}
+
+
+.topdiv{
+  position: fixed; /* Keeps the div fixed to the top of the screen */
+  top: 0;          /* Aligns the div to the top */
+  left: 0;         /* Aligns the div to the left */
+  width: 100%;     /* Makes the div span the entire width of the screen */
+  border-bottom-left-radius: 30px;  /* Rounds the bottom-left corner */
+  border-bottom-right-radius: 30px; /* Rounds the bottom-right corner */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Applies shadow with a spread and blur */
+} 
+
+.topdivtext{
+  display:flex;
+  flex-direction: row;
+}
+
+
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: fixed; /* Fixes the position of the hamburger menu */
+  top: 25px;       /* Distance from the top edge of the screen */
+  right: 25px;  
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Navigation menu styles */
+.nav-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 60px; /* Adjust depending on your top bar height */
+  right: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  opacity: 0; /* Start hidden for animation */
+  transform: scaleY(0); /* Start from zero scale */
+  transform-origin: top; /* Ensures scaling happens from the top */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.nav-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 16px;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateY(10px); /* Start from slightly below */
+  transition: opacity 0.3s ease, transform 0.3s ease, font-weight 0.3s ease, font-size 0.3s ease;
+}
+
+
+.nav-menu a:hover {
+  font-weight:600; /* Enlarges the link */
+  font-size:18px;
+}
+/* Show navigation menu on active state */
+.nav-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sequential animation for links */
+.nav-menu.show a:nth-child(1) {
+  animation: fadeIn 0.3s forwards;
+}
+
+.nav-menu.show a:nth-child(2) {
+  animation: fadeIn 0.3s 0.1s forwards;
+}
+
+.nav-menu.show a:nth-child(3) {
+  animation: fadeIn 0.3s 0.2s forwards;
+}
+
+.nav-menu.show a:nth-child(4) {
+  animation: fadeIn 0.3s 0.3s forwards;
+}
+
+/* Keyframes for the fadeIn effect */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
